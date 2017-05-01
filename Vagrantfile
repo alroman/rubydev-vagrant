@@ -70,6 +70,8 @@ Vagrant.configure("2") do |config|
   # SHELL
   config.vm.network :forwarded_port, guest: 3000, host: 2000
 
+  config.omnibus.chef_version = '12.13.37'
+
   # Use Chef Solo to provision our virtual machine
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
